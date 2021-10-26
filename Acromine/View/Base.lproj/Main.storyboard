@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Acromine View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AcromineViewController" customModule="Acromine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wD-bF-Gxc">
+                                <rect key="frame" x="2" y="89" width="332" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="328" id="xhh-9D-jRf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTz-V4-aiH">
+                                <rect key="frame" x="349" y="89" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="ij7-CE-ndE"/>
+                                </constraints>
+                                <state key="normal" title="GO"/>
+                                <connections>
+                                    <action selector="getAcromineMeaning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i5y-gG-fj3"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tbP-TJ-Hu8">
+                                <rect key="frame" x="2" y="128" width="410" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vA0-EP-k2z">
+                                        <rect key="frame" x="0.0" y="28" width="410" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vA0-EP-k2z" id="cFc-BD-BNE">
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uTz-V4-aiH" secondAttribute="trailing" constant="20" id="C8d-70-LX3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tbP-TJ-Hu8" secondAttribute="bottom" constant="20" id="Das-NC-PZT"/>
+                            <constraint firstItem="uTz-V4-aiH" firstAttribute="leading" secondItem="7wD-bF-Gxc" secondAttribute="trailing" constant="15" id="Vc7-Iz-Nuv"/>
+                            <constraint firstItem="tbP-TJ-Hu8" firstAttribute="top" secondItem="7wD-bF-Gxc" secondAttribute="bottom" constant="5" id="aVf-cB-loa"/>
+                            <constraint firstItem="uTz-V4-aiH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="mme-Ih-IfW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tbP-TJ-Hu8" secondAttribute="trailing" constant="2" id="qvS-JS-yhE"/>
+                            <constraint firstItem="7wD-bF-Gxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="sCP-0D-hPn"/>
+                            <constraint firstItem="7wD-bF-Gxc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="ttb-2C-VsI"/>
+                            <constraint firstItem="tbP-TJ-Hu8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="vtl-EZ-Lnd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="acromineMeaningTableView" destination="tbP-TJ-Hu8" id="mhL-dA-fg6"/>
+                        <outlet property="acromineTxtField" destination="7wD-bF-Gxc" id="2Q6-8V-ktD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="-60"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
